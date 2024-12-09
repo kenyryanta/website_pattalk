@@ -1,13 +1,13 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "[email protected]" }
+        "api/index.php": { "runtime": "vercel-php@0.5.2" }
     },
     "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://your-production-url.com",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://laravel-11-ovgzso97v-kenny-ryantas-projects.vercel.app",
         "CACHE_DRIVER": "array",
         "SESSION_DRIVER": "cookie",
         "LOG_CHANNEL": "stderr"
