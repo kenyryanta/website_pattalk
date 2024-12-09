@@ -4,10 +4,11 @@
         "api/index.php": { "runtime": "vercel-php@0.5.2" }
     },
     "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }],
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://laravel-11-2dhvf5326-kenny-ryantas-projects.vercel.app",
+        "APP_URL": "https://laravel-11-o2l18762t-kenny-ryantas-projects.vercel.app",
         "CACHE_DRIVER": "array",
         "SESSION_DRIVER": "cookie",
         "LOG_CHANNEL": "stderr"
