@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* VARIABLES */
+:root {
+    --c-dark: #212529;
+    --c-brand: #720455;
+    --c-brand-light: #910a67;
+    --c-body: #727272;
+    --font-base: "Poppins", sans-serif;
+    --transition: all 0.5s ease;
+}
+
+/* RESET & HELPERS */
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600;
+    color: var(--c-dark);
+}
+
+span {
+    color: var(--c-brand-light);
+    border-bottom: 5px solid;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* IMAGE ZOOM */
+.image-zoom {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+    transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--c-dark);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand);
+    border-bottom: 2px solid;
+}
+
+/* class Button */
+.btn {
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 25px;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+
+/* HERO */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar5.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_B {
+    background: linear-gradient(rgba(61, 5, 5, 0.8), rgba(56, 4, 90, 0.8)),
+        url(../images/10.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_K {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar7.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_A {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar9.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_F {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar8.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* SECTION  */
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+.section-title p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ICONBOX */
+.iconbox {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-brand-light);
+    color: white;
+    font-size: 34px;
+    flex: none;
+}
+
+/* SERVICE */
+.service {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.service::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--c-brand-rgb), 0.2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: var(--transition);
+}
+
+.service:hover::after {
+    width: 100%;
+    height: 100%;
+    background: var(--c-brand);
+    z-index: -1;
+}
+
+.service:hover h5,
+.service:hover p {
+    color: white;
+}
+
+.service:hover .iconbox {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 100%;
+}
+/* TEAM */
+.team-member .image {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.team-member h5 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+.team-member .social-icons a {
+    width: 40px;
+    height: 40px;
+}
+.icon-box2 {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-brand);
+    border-radius: 100px;
+    font-size: 34px;
+    color: white;
+    margin-bottom: 10px;
+}
+.icon-box2:hover {
+    background-color: var(--c-brand-light);
+}
+
+/* BLOG  */
+.blog-post .content {
+    padding: 32px;
+}
+
+.blog-post a {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--brand);
+    padding: 2px 12px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.blog-post h5 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.blog-post small {
+    text-transform: uppercase;
+    color: var(--brand);
+    text-decoration: underline;
+}
+
+/* contact */
+#contact {
+    min-height: 450px;
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+footer {
+    background: linear-gradient(0deg, rgb(114, 4, 85), rgba(67, 81, 91, 0)),
+        url(../images/about2.jpg), #082032;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer .footer-top {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.icon-box3 {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100px;
+    font-size: 34px;
+    color: black;
+    margin-bottom: 10px;
+}
+.icon-box3:hover {
+    background-color: var(--c-brand-light);
+    color: white;
+}
+.icon-box4 {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-brand);
+    border-radius: 100px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 10px;
+}
+.card {
+    border: none;
+}
+.card_header {
+    border: none;
+    max-width: 30px;
+}
+.ellipsis {
+    color: #a09c9c;
+}
+hr {
+    color: #a09c9c;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+.muted-color {
+    color: #a09c9c;
+    font-size: 13px;
+}
+.ellipsis i {
+    margin-top: 3px;
+    cursor: pointer;
+}
+.icons i {
+    font-size: 25px;
+}
+.icons .fa-heart {
+    color: red;
+}
+.icons .fa-smile-o {
+    color: yellow;
+    font-size: 29px;
+}
+.rounded-image {
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+.name {
+    font-weight: 600;
+}
+.comment-text {
+    font-size: 12px;
+}
+.status small {
+    margin-right: 10px;
+    color: blue;
+}
+.form-control {
+    border-radius: 26px;
+}
+.comment-input {
+    position: relative;
+}
+.fonts {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    color: #a09c9c;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #8bbafe;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* Mengatur margin pada section untuk memberi jarak dari navbar */
+.custom-comment-section {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Mengatur tata letak elemen dalam comment-input */
+.custom-comment-input {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Mengatur tampilan input form */
+.custom-comment-input .custom-form-control {
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+/* Mengatur tata letak ikon */
+.custom-comment-input .custom-fonts {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* Mengatur ukuran dan margin ikon */
+.custom-comment-input .custom-fonts i {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.custom-comment-input .custom-fonts i:last-child {
+    margin-right: 0;
+}
