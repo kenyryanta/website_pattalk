@@ -21,7 +21,7 @@
                 <li class="nav-item" data-aos="fade-left" data-aos-delay="200">
                     <a href="/profile" class="btn btn-brand ms-lg-3 nav-btn">
                         <i class="ri-user-line me-2"></i>
-                        <span style="color: white">Profile</span>
+                        <span style="color: white;border:none;">Profile</span>
                     </a>
                 </li>
                 <li class="nav-item" data-aos="fade-left" data-aos-delay="300">
@@ -29,7 +29,7 @@
                         @csrf
                         <button type="submit" class="btn btn-brand ms-lg-3 nav-btn logout-btn">
                             <i class="ri-logout-box-r-line me-2"></i>
-                            <span style="color: white">Logout</span>
+                            <span style="color: white; border:none;">Logout</span>
                         </button>
                     </form>
                 </li>
@@ -60,12 +60,6 @@
     -webkit-text-fill-color: transparent;
 }
 
-.brand-icon {
-    color: #720455;
-    font-size: 1.2rem;
-    margin-left: 5px;
-    animation: bounce 2s infinite;
-}
 
 /* Navigation Buttons */
 .nav-btn {

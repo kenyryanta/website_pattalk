@@ -152,6 +152,7 @@
 
   .card2:hover {
     background-color: #48002b; 
+    color: whitel
   }
 </style>
 
