@@ -145,12 +145,12 @@ img {
 
 /* SECTION  */
 .section-title {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .section-padding {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .section-title p {
     max-width: 500px;
@@ -207,61 +207,235 @@ img {
     border-radius: 100%;
 }
 /* TEAM */
-.team-member .image {
+.team-box {
     position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.team-box:hover {
+    transform: translateY(-10px);
+}
+
+.member-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.overlay-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(50, 158, 7, 0.8),
+        rgba(114, 4, 85, 0.8),
+        rgba(107, 114, 4, 0.8)
+    );
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(0.8);
+    text-align: center;
+    opacity: 0;
     z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.member-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.member-role {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.social-links {
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.2s;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #720455;
+    transform: translateY(-3px);
+}
+
+/* Hover Effects */
+.team-box:hover .member-img {
+    transform: scale(1.1);
+}
+
+.team-box:hover .overlay-effect {
+    opacity: 1;
+}
+
+.team-box:hover .box-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.team-box:hover .member-name,
+.team-box:hover .member-role,
+.team-box:hover .social-links {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .team-box {
+        margin-bottom: 30px;
+    }
+
+    .member-img {
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .member-img {
+        height: 300px;
+    }
+}
+
+/* Blog Section Styling */
+.text-gradient {
+    background: linear-gradient(45deg, #720455, #9c1076);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, #720455, #9c1076);
+    margin: 0 auto;
+}
+
+.blog-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(114, 4, 85, 0.2);
+}
+
+.card-img-wrapper {
+    position: relative;
     overflow: hidden;
 }
-.team-member h5 {
-    margin-top: 16px;
-    margin-bottom: 4px;
+
+.card-img-wrapper img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.team-member .social-icons a {
-    width: 40px;
-    height: 40px;
+.blog-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
 }
-.icon-box2 {
-    width: 50px;
-    height: 50px;
-    display: inline-flex;
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(114, 4, 85, 0.7);
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--c-brand);
-    border-radius: 100px;
-    font-size: 34px;
-    color: white;
-    margin-bottom: 10px;
-}
-.icon-box2:hover {
-    background-color: var(--c-brand-light);
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
-/* BLOG  */
-.blog-post .content {
-    padding: 32px;
+.blog-card:hover .card-img-overlay {
+    opacity: 1;
 }
 
-.blog-post a {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: var(--brand);
-    padding: 2px 12px;
-    border-radius: 100px;
+.overlay-content {
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.card-title {
+    color: #720455;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.btn-link {
     text-decoration: none;
-    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.blog-post h5 {
-    margin-top: 12px;
-    margin-bottom: 12px;
+.btn-link:hover {
+    transform: translateX(5px);
 }
 
-.blog-post small {
-    text-transform: uppercase;
-    color: var(--brand);
-    text-decoration: underline;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-card {
+        margin-bottom: 30px;
+    }
+
+    .card-img-wrapper img {
+        height: 180px;
+    }
 }
 
 /* contact */

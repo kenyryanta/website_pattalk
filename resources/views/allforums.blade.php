@@ -19,7 +19,7 @@
                        placeholder="Search discussions..." name="Query">
                 <button type="submit" class="btn" 
                         style="background-color: #720455; color: white; border-radius: 0 25px 25px 0; padding: 0 25px;">
-                    <i class="ri-search-line"></i>
+                    <i class='bx bx-search-alt fs-4' ></i>
                 </button>
             </div>
         </form>
@@ -29,7 +29,7 @@
         <a href="/createforum" 
            class="btn btn-lg"
            style="background-color: #720455; color: white; border-radius: 25px; padding: 12px 30px; font-weight: 600;">
-            <i class="ri-add-line"></i> Create New Discussion
+       Create New Discussion
         </a>
     </div>
 
@@ -54,7 +54,7 @@
                         <div class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-delay="{{ $loop->iteration * 75 }}">
                             <div class="me-3">
                                 <div class="icon-wrapper">
-                                    <i class="ri-discuss-line" style="color: #720455; font-size: 1.5rem;"></i>
+                                    <i class="bx bxs-conversation" style="color: #720455; font-size: 1.5rem;"></i>
                                 </div>
                             </div>
                             <div>
@@ -62,7 +62,7 @@
                                     {{ $forum->ForumTitle }}
                                 </h3>
                                 <div class="d-flex align-items-center">
-                                    <i class="ri-time-line me-2" style="color: #720455;"></i>
+                                    <i class="bx bxs-calendar" style="color: #720455;"></i>
                                     <small class="text-muted">{{ $forum->CreatedAt }}</small>
                                 </div>
                             </div>

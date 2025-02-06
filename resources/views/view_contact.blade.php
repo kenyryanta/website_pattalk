@@ -37,21 +37,13 @@
                 <p class="message-text" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                     {{ $contact->message }}
                 </p>
+                 <a href="{{ route('delete-contact', $contact->id) }}" 
+                               class="btn btn-danger flex-grow-1"
+                               style="transition: all 0.3s ease;"
+                               onclick="confirmDelete(event, this.href)">
+                               Hapus pesan
+                            </a>
 
-                <form id="myForm" 
-      action="{{ route('delete-contact', $contact->id) }}" 
-      method="POST" 
-      class="d-inline" 
-       onclick="confirmSubmit(event)">
-    @csrf
-    <button type="submit" 
-            class="btn btn-danger btn-sm px-3 delete-btn"
-            data-aos="fade-up" 
-            data-aos-delay="{{ $loop->iteration * 125 }}">
-        <i class="ri-delete-bin-line me-1"></i>
-        Hapus Pesan
-    </button>
-</form>
 
             </div>
         </div>
@@ -59,22 +51,22 @@
     </div>
 </section>
 <script>
-    function confirmSubmit(event) {
-        event.preventDefault(); // Mencegah form langsung disubmit
+    function confirmDelete(event, url) {
+        event.preventDefault(); // Mencegah link langsung dijalankan
 
         Swal.fire({
             title: 'Apakah Anda yakin?',
-            text: "Ingin Menghapus Pesan ini",
+            text: "Data ini akan dihapus secara permanen!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, Hapus!',
+            confirmButtonText: 'Ya, hapus!',
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Submit form jika pengguna mengonfirmasi
-                document.getElementById("myForm").submit();
+                // Redirect ke URL jika pengguna mengonfirmasi
+                window.location.href = url;
             }
         });
     }

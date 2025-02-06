@@ -13,7 +13,7 @@
                        placeholder="Search Animals..." name="Query">
                 <button type="submit" class="btn" 
                         style="background-color: #720455; color: white; border-radius: 0 25px 25px 0; padding: 0 25px;">
-                    <i class="ri-search-line"></i>
+                  <i class='bx bx-search-alt fs-4' ></i>
                 </button>
             </div>
         </form>
@@ -81,19 +81,19 @@
                             <a href="{{ route('adopsi.edit', ['id' => $animal->id]) }}" 
                                class="btn btn-warning flex-grow-1"
                                style="transition: all 0.3s ease;">
-                                <i class="ri-edit-line"></i>
+                              <i class='bx bxs-edit-alt fs-4' ></i>
                             </a>
                             <a href="/deleteadopsi/{{ $animal->id }}" 
                                class="btn btn-danger flex-grow-1"
                                style="transition: all 0.3s ease;"
                                onclick="confirmDelete(event, this.href)">
-                                <i class="ri-delete-bin-line"></i>
+                               <i class='bx bxs-trash fs-4' ></i>
                             </a>
                         @else
                             <a href="/Form_Adopsi/{{ $animal->id }}" 
                                class="btn flex-grow-1"
                                style="background: #720455; color: white; transition: all 0.3s ease;">
-                                <i class="ri-heart-fill me-1"></i>Adopsi
+                             <i class='bx bx-heart-circle ' ></i>Adopsi
                             </a>
                         @endif
                     </div>

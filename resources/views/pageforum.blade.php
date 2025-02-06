@@ -3,7 +3,7 @@
 
 <div class="container py-5">
     <!-- Forum Content -->
-    @if(isset($forum))
+    @if(isset($forum) && count($forum) > 0)
         @foreach($forum as $foru)
         <div class="card shadow-lg mb-4" style="border-radius: 15px; border: none;">
             <div class="card-body p-4">
@@ -22,7 +22,7 @@
                 </div>
 
                 <!-- Forum Image -->
-                @if($foru->ForumImage !== null)
+                @if(!empty($foru->ForumImage))
                     <div class="mb-4">
                         <img src="{{ asset('storage/forumimages/'.$foru->ForumImage) }}" 
                              class="img-fluid rounded" 
@@ -49,10 +49,12 @@
             </div>
         </div>
         @endforeach
+    @else
+        <p>Forum tidak ditemukan.</p>
     @endif
 
     <!-- Comments Section -->
-    @if(isset($forumposts))
+    @if(isset($forumposts) && count($forumposts) > 0)
         <div class="card shadow mb-4" style="border-radius: 15px; border: none;">
             <div class="card-body p-4">
                 <h4 class="mb-4" style="color: #720455;">
@@ -72,11 +74,13 @@
                 @endforeach
             </div>
         </div>
+    @else
+        <p>Tidak ada komentar.</p>
     @endif
 
     <!-- Comment Form -->
     <div id="comment" style="display: none;">
-        @if(!empty(Session::get('user_data')))
+        @if(Auth::check())
             <?php $currentuser = Auth::user(); ?>
             <div class="card shadow" style="border-radius: 15px; border: none;">
                 <div class="card-body p-4">
@@ -107,32 +111,44 @@
                     </form>
                 </div>
             </div>
+        @else
+            <p>Silakan login untuk menambahkan komentar.</p>
         @endif
     </div>
 </div>
+
+@endsection
+
 <script>
+// Toggle the comment section visibility
 function commentbtn() {
     const commentSection = document.getElementById("comment");
-    commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
-    
-    if (commentSection.style.display === "block") {
+    if (commentSection.style.display === "none" || commentSection.style.display === "") {
+        commentSection.style.display = "block";
         commentSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        commentSection.style.display = "none";
     }
 }
 
-// Add smooth transition for comment section
-document.getElementById("comment").style.transition = "all 0.3s ease";
+// Ensure smooth transitions for the comment section and buttons
+document.addEventListener("DOMContentLoaded", () => {
+    const commentSection = document.getElementById("comment");
+    if (commentSection) {
+        commentSection.style.transition = "all 0.3s ease";
+        commentSection.style.display = "none";
+    }
 
-// Add animation for buttons
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(button => {
-    button.addEventListener('mouseover', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.transition = 'all 0.3s ease';
-    });
-    
-    button.addEventListener('mouseout', function() {
-        this.style.transform = 'translateY(0)';
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        button.addEventListener('mouseout', function() {
+            this.style.transform = 'translateY(0)';
+        });
     });
 });
 </script>
@@ -163,6 +179,8 @@ textarea:focus {
     border-color: #720455 !important;
     box-shadow: 0 0 0 0.2rem rgba(114, 4, 85, 0.25) !important;
 }
-</style>
 
-@endsection
+#comment {
+    display: none;
+}
+</style>

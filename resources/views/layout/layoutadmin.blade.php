@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
         <!-- !!! THE LINE BELOW IS REQUIRED SO YOU CAN USE BOOTSTRAP !!! -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         <!-- !!! THE LINE ABOVE IS REQUIRED SO YOU CAN USE BOOTSTRAP !!! -->
@@ -12,25 +11,12 @@
         <link rel="icon" href="{{'images/logo.jpg'}}" />
         <!-- ./assets/images/logo.jpg -->
         <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-        />
-        <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-        />
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-        />
-        <link
         href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
         rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="{{'../../css/style.css'}}" />
-        <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
-       
+        <link rel="stylesheet" href="{{'../../css/aos.css'}}" />
+        <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}"> 
     </head>
     <body>
       <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
@@ -44,7 +30,7 @@
     <p class="mb-5 text-muted text-center" data-aos="fade-up" data-aos-delay="200">
         Explore blogs, connect in forums, and adopt your favorite pets!
     </p>
-    
+
     <div class="row justify-content-center gy-4">
         @auth
             @if(auth()->user()->role === 'admin')
@@ -53,6 +39,7 @@
                     <div class="card2 border-0 text-center mx-auto p-4 shadow-hover glass-effect">
                         <a href="{{ route('show-contacts') }}" class="d-flex flex-column align-items-center text-decoration-none text-dark">
                             <div class="icon-wrapper">
+                                
                                 <i class="bx bxs-contact display-4 icon-highlight pulse-animation"></i>
                             </div>
                             <span class="mt-3 fw-semibold">Show Contact</span>

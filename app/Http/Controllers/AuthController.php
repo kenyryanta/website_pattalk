@@ -49,7 +49,7 @@ class AuthController extends Controller
             'phone' => $request->phone,
             'address' => $request->address,
             'password' => Hash::make($request->password),
-            'role' => 'pelanggan', // Peran default
+            'role' => 'customer', // Peran default
         ]);
 
         // Arahkan ke halaman login dengan pesan sukses

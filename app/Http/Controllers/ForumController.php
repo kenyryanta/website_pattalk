@@ -7,6 +7,7 @@ use App\Models\Forum;
 use App\Models\Forumposts;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
@@ -25,13 +26,12 @@ class ForumController extends Controller
         $validator=$req->validate([
             'title'=>['required','max:255'],
             'content'=>['required'],
-            'id'=>['required'],
             'ForumImage' =>['nullable','file','image'],
         ]);
         $forum=new Forum;
         $forum->ForumTitle=$req->title;
         $forum->ForumContent=$req->content;
-        $forum->ForumCreator=$req->id;
+        $forum->ForumCreator=Auth::user() -> id;
         $time=now()->format('Y-m-d-H-i-s');
         if($req->ForumImage !==null){
         $extension=$req->ForumImage->getClientOriginalExtension();

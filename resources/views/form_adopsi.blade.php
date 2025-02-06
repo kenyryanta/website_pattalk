@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <h1 class="text-center mb-5" style="color: #720455; font-weight: 600;">
-                    <i class="ri-heart-2-fill me-2"></i>Konfirmasi Adopsi
+                  <i class='bx bxs-heart-circle' ></i>Konfirmasi Adopsi
                 </h1>
 
                 <div class="row">
@@ -23,17 +23,17 @@
                                 
                                 <div class="pet-details mt-4">
                                     <div class="d-flex align-items-center mb-3">
-                                        <i class="ri-calendar-line me-3" style="color: #720455; font-size: 1.2rem;"></i>
+                                        <i class='bx bxs-calendar'style="color: #720455; font-size: 1.2rem;" ></i>
                                         <span>Umur: {{ $hewan->age }} tahun</span>
                                     </div>
                                     
                                     <div class="d-flex align-items-center mb-3">
-                                        <i class="ri-service-line me-3" style="color: #720455; font-size: 1.2rem;"></i>
+                               <i class='bx bxs-happy-heart-eyes' style="color: #720455; font-size: 1.2rem;" ></i>
                                         <span>Jenis: {{ $hewan->breed }}</span>
                                     </div>
                                     
                                     <div class="d-flex align-items-center">
-                                        <i class="ri-file-text-line me-3" style="color: #720455; font-size: 1.2rem;"></i>
+                                     <i class='bx bxs-user-detail' style="color: #720455; font-size: 1.2rem;" ></i>
                                         <span>{{ $hewan->description }}</span>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                     <!-- Delivery Option -->
                                     <div class="mb-4">
                                         <label class="form-label fw-bold" style="color: #720455;">
-                                            <i class="ri-truck-line me-2"></i>Opsi Pengiriman
+                                          <i class='bx bxs-truck' ></i>Opsi Pengiriman
                                         </label>
                                         <select class="form-select form-select-lg" 
                                                 name="transport" 
@@ -78,7 +78,7 @@
                                     <!-- Message -->
                                     <div class="mb-4">
                                         <label class="form-label fw-bold" style="color: #720455;">
-                                            <i class="ri-message-3-line me-2"></i>Pesan
+                                           <i class='bx bxs-message-dots' ></i>Pesan
                                         </label>
                                         <textarea class="form-control" 
                                                   name="message" 
@@ -93,7 +93,6 @@
 
                                     <!-- Submit Button -->
                                     <button type="submit" 
-                                    onclick="confirmSubmit(event)"
                                             class="btn btn-lg w-100" 
                                             style="background: linear-gradient(45deg, #720455, #9c1076); color: white; border-radius: 10px;">
                                         <i class="ri-heart-fill me-2"></i>

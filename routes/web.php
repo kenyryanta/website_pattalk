@@ -11,7 +11,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 // login-logout
 Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('guest');
-Route::get('/blog-guest/{id}', [HomeController::class, 'index_blog'])->name('index-blog');
+Route::get('/blog-guest/{id}', [HomeController::class, 'index_blog'])->name('index-blog')->middleware('auth');
 Route::get('/signin', [AuthController::class, 'showSigninPage'])->name('signin')->middleware('guest');
 Route::post('/signin', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/signup', [AuthController::class, 'showSignupPage'])->name('signup')->middleware('guest');
@@ -26,7 +26,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 Route::post('/contact',[ContactController::class, 'create_contact'])->name('indext-create-contact')->middleware('guest');
 // contact admin
 Route::get('/Home', [ContactController::class, 'show_contacts'])->name('show-contacts')->middleware(['auth','admin']);
-Route::post('/Home/{id}', [ContactController::class, 'delete_contact'])
+Route::get('/Home/{id}', [ContactController::class, 'delete_contact'])
     ->name('delete-contact')
     ->middleware(['auth', 'admin']);
 

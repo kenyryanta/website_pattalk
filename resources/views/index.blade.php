@@ -6,24 +6,13 @@
     <title>PetTalk</title>
     <link rel="icon" href="{{'images/logo.jpg'}}" />
     <!-- ./assets/images/logo.jpg -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-    />
+ @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{'css/style.css'}}" />
+    <link rel="stylesheet" href="{{'css/aos.css'}}" />
     <!-- ./assets/css/style.css -->
   </head>
   @include('sweetalert::alert')
@@ -58,9 +47,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#team">Team</a>
@@ -105,195 +91,175 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-12 text-center"
-            data-aos="fade-down"
-            data-aos-delay="50"
-          ></div>
-        </div>
+   <!-- ABOUT -->
+<section id="about" class="section-padding">
+    <div class="container">
         <div class="row justify-content-center align-items-center">
-          <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
-            <img
-              style="
-                max-width: 550px;
-                max-height: 550px;
-                min-width: 550px;
-                min-height: 550px;
-              " src="{{'images/about2.jpg'}}"s
-              alt=""
-            />
-          </div>
-          <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
-            <h1>About <span>PetTalk</span></h1>
-            <p class="mt-3 mb-4">
-            PetTalk adalah platform web untuk pemilik hewan peliharaan yang menyediakan berbagai layanan,
-            informasi, dan fitur interaktif untuk perawatan anjing dan kucing.
-            </p>
-            <div class="d-flex pt-4 mb-3">
-              <div class="iconbox me-4">
-                <i class="ri-mail-send-fill"></i>
-              </div>
-              <div>
-                <h5>Konsultasi</h5>
-                <p>
-                Konsultasi kesehatan online dengan dokter hewan.
-                </p>
-              </div>
+            <!-- Image Column -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                <div class="about-image-wrapper">
+                    <img src="{{'images/about2.jpg'}}" alt="About PetTalk" />
+                    <div class="image-overlay"></div>
+                </div>
             </div>
-            <div class="d-flex mb-3">
-              <div class="iconbox me-4">
-                <i class="ri-user-5-fill"></i>
-              </div>
-              <div>
-                <h5>Adopsi</h5>
-                <p>
-                  Informasi hewan yang tersedia untuk diadopsi dari shelter atau pengguna lain.
-                </p>
-              </div>
-            </div>
-            <div class="d-flex">
-              <div class="iconbox me-4">
-                <i class="ri-rocket-2-fill"></i>
-              </div>
-              <div>
-                <h5>Forum Chat</h5>
-                <p>
-                  Wadah diskusi bagi pengguna untuk berbagi informasi dan pengalaman.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section-padding border-top">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-12 text-center"
-            data-aos="fade-down"
-            data-aos-delay="150"
-          >
-            <div class="section-title">
-              <h1 class="display-4 fw-semibold">
-                Awesome <span>Services</span>
-              </h1>
+            <!-- Content Column -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <div class="about-content">
+                    <!-- Title -->
+                    <h1 class="mb-4">
+                        About 
+                        <span class="highlight">PetTalk</span>
+                    </h1>
 
-              <p>
-                We love to craft digital experiances for brands rather than crap
-                and more lorem ipsums and do crazy skills
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row g-4 text-center">
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="150"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-hospital-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Pet healty</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="250"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-timer-flash-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Time Efficiency</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="350"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-chat-3-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Chat Real Time</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="450"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-heart-add-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Pet Adoption</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="550"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-discuss-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Forum Discuss</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6"
-            data-aos="fade-down"
-            data-aos-delay="650"
-          >
-            <div class="service shadow-lg p-lg-5 p-4">
-              <div class="iconbox">
-                <i class="ri-information-fill"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Information</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                fugiat sunt distinctio?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    <!-- Description -->
+                    <p class="lead mb-5">
+                        PetTalk adalah platform inovatif untuk pecinta hewan peliharaan. Kami menyediakan layanan konsultasi kesehatan hewan, informasi adopsi, dan forum komunitas untuk berbagi pengalaman.
+                    </p>
 
+                    <!-- Feature Boxes -->
+                    <div class="feature-box mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="icon-circle">
+                             <i class='bx bx-news' ></i>
+                            </div>
+                            <!-- Text -->
+                            <div>
+                                <h5>Articles</h5>
+                                <p>Memberikan informasi Mengenai Hewawn Peliharaan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-box mb-4" data-aos="zoom-in-up" data-aos-delay="400">
+                        <div class="d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="icon-circle">
+                               <i class='bx bxs-heart' ></i>
+                            </div>
+                            <!-- Text -->
+                            <div>
+                                <h5>Adopsi</h5>
+                                <p>Informasi hewan yang tersedia untuk diadopsi dari shelter atau pengguna lain.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-box" data-aos="zoom-in-up" data-aos-delay="500">
+                        <div class="d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="icon-circle">
+                                <i class='bx bxs-chat' ></i>
+                            </div>
+                            <!-- Text -->
+                            <div>
+                                <h5>Forum Chat</h5>
+                                <p>Wadah diskusi bagi pengguna untuk berbagi informasi dan pengalaman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+  /* General Section Styling */
+.section-padding {
+    padding: 80px 0;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(114, 4, 85, 0.15);
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.about-image-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(114, 4, 85, 0.2), rgba(156, 16, 118, 0.2));
+    pointer-events: none;
+}
+
+.about-content h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-content .highlight {
+    background: linear-gradient(90deg, #720455, #9c1076);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-content p.lead {
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.feature-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(114, 4, 85, 0.2);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #720455, #9c1076);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.icon-circle i {
+    color: white;
+    font-size: 24px;
+}
+
+.feature-box h5 {
+    color: #720455;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    color: #666;
+}
+</style>
     <!-- TEAM -->
-    <section id="team" class="section-padding border-top">
+  <section id="team" class="section-padding border-top">
       <div class="container">
         <div class="row">
           <div
@@ -305,150 +271,114 @@
               <h1 class="display-4 fw-semibold">Team <span>Members</span></h1>
 
               <p>
-                We love to craft digital experiances for brands rather than crap
-                and more lorem ipsums and do crazy skills
+                Kami berkolaborasi untuk menciptakan solusi digital inovatif dan pengalaman terbaik untuk Anda.
               </p>
             </div>
           </div>
         </div>
         <div class="row justify-content-center text-center">
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image">
-                <img src="{{'images/team3.jpg'}}" alt="" />
-                <!-- assets/images/team3.jpg -->
-              </div>
-
-              <h5>M.Kenny Ryanta</h5>
-              <p>Software Developer</p>
-              <div class="social-icons">
-                <a href="#"><i class="bx bxl-facebook icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-twitter icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-instagram icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-linkedin icon-box2"></i></a>
-              </div>
+          <div data-aos="fade-up" 
+     data-aos-delay="100" class="col-md-4 col-sm-6">
+            
+            <div class="team-box">
+                <img class="member-img" src="{{'images/1.jpeg'}}">
+                <div class="overlay-effect"></div>
+                <div class="box-content">
+                  <h3 class="member-name">Kenny Ryanta</h3>
+                  <h5 class="member-name">2602146172</h5>  
+                  <div class="social-links">
+                    <span class="member-role">Web Developer</span>
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image">
-                <img src="{{'images/team1.jpg'}}" alt="" />
-                <!-- assets/images/team1.jpg -->
-              </div>
-
-              <h5>Andika Rizky Putrahutama</h5>
-              <p>Software Developer</p>
-              <div class="social-icons">
-                <a href="#"><i class="bx bxl-facebook icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-twitter icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-instagram icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-linkedin icon-box2"></i></a>
-              </div>
+      </div>
+      <div class="col-md-4 col-sm-6"
+      data-aos="fade-up" 
+     data-aos-delay="200">
+            <div class="team-box">
+                <img class="member-img" src="{{'images/2.jpeg'}}">
+                <div class="overlay-effect"></div>
+                <div class="box-content">
+                  <h3 class="member-name">Patrick Adrian</h3>
+                  <h5 class="member-name">2602128176</h5>  
+                  <div class="social-links">
+                    <span class="member-role">Web Developer</span>
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image">
-                <img src=" {{'images/team2.jpg'}} " alt="" />
-                <!-- assets/images/team2.jpg -->
-              </div>
-              <h5>Patrick Adrian Nelwan</h5>
-              <p>Software Developer</p>
-              <div class="social-icons">
-                <a href="#"><i class="bx bxl-facebook icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-twitter icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-instagram icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-linkedin icon-box2"></i></a>
-              </div>
+      </div>
+      <div  data-aos="fade-up" 
+     data-aos-delay="300" class="col-md-4 col-sm-6">
+            <div class="team-box">
+                <img class="member-img" src="{{'images/3.jpeg'}}">
+                <div class="overlay-effect"></div>
+                <div class="box-content">
+                  <h3 class="member-name">Andika Rizky</h3>
+                  <h5 class="member-name">2602109832</h5>  
+                  <div class="social-links">
+                    <span class="member-role">Web Developer</span>
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image">
-                <img src=" {{'images/team2.jpg'}} " alt="" />
-                <!-- assets/images/team2.jpg -->
-              </div>
-              <h5>Christoper Parulian Marpaung</h5>
-              <p>Software Developer</p>
-              <div class="social-icons">
-                <a href="#"><i class="bx bxl-facebook icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-twitter icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-instagram icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-linkedin icon-box2"></i></a>
-              </div>
+      </div>
+      <div  data-aos="fade-up" 
+     data-aos-delay="400" class="col-md-4 col-sm-6">
+            <div class="team-box">
+                <img class="member-img" src="{{'images/4.jpeg'}}">
+                <div class="overlay-effect"></div>
+                <div class="box-content">
+                  <h3 class="member-name">Christopher Parulian</h3>
+                  <h5 class="member-name">2602231993</h5>  
+                  <div class="social-links">
+                    <span class="member-role">Web Developer</span>
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image">
-                <img src=" {{'images/team2.jpg'}} " alt="" />
-                <!-- assets/images/team2.jpg -->
-              </div>
-              <h5>Owen Kartolo</h5>
-              <p>Software Developer</p>
-              <div class="social-icons">
-                <a href="#"><i class="bx bxl-facebook icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-twitter icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-instagram icon-box2"></i></a>
-                <a href="#"><i class="bx bxl-linkedin icon-box2"></i></a>
-              </div>
+      </div>
+      <div  data-aos="fade-up" 
+     data-aos-delay="500" class="col-md-4 col-sm-6">
+            <div class="team-box">
+                <img class="member-img" src="{{'images/5.jpeg'}}">
+                <div class="overlay-effect"></div>
+                <div class="box-content">
+                  <h3 class="member-name">Owen Kartolo</h3>
+                  <h5 class="member-name">2602140345</h5>  
+                  <div class="social-links">
+                    <span class="member-role">Web Developer</span>
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
             </div>
-          </div>
+      </div>
         </div>
       </div>
-    </section>
+  </section>
 
     <section id="contact" class="section-padding border-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            {{-- <form class="p-lg-5 row g-3 bg-white text-dark opacity-75">
-                <div class="text-center">
-                  <h1><span>Contact Us</span></h1>
-                  <p>
-                    Fell free to contact us and we will get back to you as soon as
-                    possible
-                  </p>
-                </div>
-                <div class="col-lg-6">
-                  <label for="userName" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="userName" />
-                </div>
-                <div class="col-lg-6">
-                  <label for="userName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="userName" />
-                </div>
-                <div class="col-12">
-                  <label for="userName" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="userName" />
-                </div>
-                <div class="col-12">
-                  <label for="exampleInputEmail1" class="form-label"
-                    >Enter Message</label
-                  >
-                  <textarea
-                    name=""
-                    class="form-control"
-                    id=""
-                    rows="4"
-                  ></textarea>
-                </div>
 
-                <div class="col-12">
-                  <button type="submit" class="btn btn-brand">
-                    Send Message
-                  </button>
-                </div>
-            </form> --}}
             <form action="{{ route('indext-create-contact') }}" class="p-lg-5 row g-3 bg-white text-dark opacity-75" method="POST" enctype="multipart/form-data">
                 @csrf
               <div class="text-center">
                 <h1><span>Contact Us</span></h1>
                 <p>
-                  Fell free to contact us and we will get back to you as soon as
-                  possible
+                  Jangan ragu untuk menghubungi kami dan kami akan segera menghubungi Anda kembali
                 </p>
               </div>
               <div class="col-lg-6">
@@ -488,101 +418,59 @@
     </section>
 
     <section id="blog" class="section-padding border-top">
-      <div class="container">
+    <div class="container">
+        <!-- Section Title -->
         <div class="row">
-          <div
-            class="col-12 text-center"
-            data-aos="fade-down"
-            data-aos-delay="150"
-          >
-            <div class="section-title">
-              <h1 class="display-4 fw-semibold">
-                Blog Posts<span>& Articles</span>
-              </h1>
-
-              <p>
-                We love to craft digital experiances for brands rather than crap
-                and more lorem ipsums and do crazy skills
-              </p>
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="100">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">
+                        Blog Posts <span class="text-gradient">& Articles</span>
+                    </h1>
+                    <div class="line my-4"></div>
+                    <p class="text-muted">
+                    bukan sekadar tulisan kosong atau karya bias ini dapat memberikan solusi untuk anda
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-        {{-- <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card border-0 shadow-sm h-100">
-                <img
-                  style="max-height: 300px; min-height: 300px"
-                  class="card-img-top"
-                  alt="..."
-                  src="{{'images/gambar1.jpg'}}"
-                />
-                <div class="card-body shadow-lg mx-1">
-                  <h5 class="card-title fw-bold">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-brand">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card border-0 shadow-sm h-100">
-                <img
-                  style="max-height: 300px; min-height: 300px"
-                  class="card-img-top"
-                  alt="..."
-                  src="{{'images/gambar2.jpg'}}"
-                />
-                <div class="card-body shadow-lg mx-1">
-                  <h5 class="card-title fw-bold">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-brand">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card border-0 shadow-sm h-100">
-                <img
-                  style="max-height: 300px; min-height: 300px"
-                  class="card-img-top"
-                  alt="..."
-                  src="{{'images/gambar4.jpg'}}"
-                />
-                <div class="card-body shadow-lg mx-1">
-                  <h5 class="card-title fw-bold">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-brand">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-        </div> --}}
-        <div class="container">
-            <div class="row justify-content-center mt-3">
-                @foreach ($blogs->take(3) as $blog)
-                    <div class="col-md-4 mb-4 d-flex justify-content-center">
-                        <div class="card border-dark shadow-lg h-100" style="width: 18rem; border-width: 1.5px; border-color: #720455; background-color: #f8f9fa;">
-                            <img src="{{ asset('storage/image_blog/' . $blog->images) }}" class="card-img-top" alt="{{ $blog->title }}">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title small">{{ $blog->title }}</h5>
-                                <p class="card-text small" style="text-align: justify;">{{ Str::words($blog->description, 20) }}</p>
-                                <div class="mt-auto">
-                                    <a href="{{ url('/blog-guest/' . $blog->id) }}" class="btn btn-primary" style="background-color: #720455;">Read more</a>
+
+        <!-- Blog Cards -->
+        <div class="row justify-content-center mt-5">
+            @foreach ($blogs->take(3) as $key => $blog)
+                <div class="col-md-4 mb-4" 
+                     data-aos="fade-up" 
+                     data-aos-delay="{{ $key * 100 + 200 }}">
+                    <div class="card blog-card h-100">
+                        <div class="card-img-wrapper">
+                            <img src="{{ asset('storage/image_blog/' . $blog->images) }}" 
+                                 class="card-img-top" 
+                                 alt="{{ $blog->title }}">
+                            <div class="card-img-overlay">
+                                <div class="overlay-content">
+                                    <a href="{{ url('/blog-guest/' . $blog->id) }}" 
+                                       class="btn btn-light btn-sm">Read More</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-3">{{ $blog->title }}</h5>
+                            <p class="card-text text-muted">
+                                {{ Str::words($blog->description, 20) }}
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="{{ url('/blog-guest/' . $blog->id) }}" 
+                               class="btn btn-link text-primary p-0">
+                                Read Full Article 
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
     <!-- footer -->
     <footer>
